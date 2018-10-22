@@ -9,17 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeScreen">
+        <activity android:name=".HomeScreen"
+            android:label="Meetings">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MeetingScreen" />
-        <activity android:name=".AttendanceScreen" />
-        <activity android:name=".LessonScreen" />
-        <activity android:name=".FeedbackScreen"></activity>
+        <activity android:name=".MeetingScreen"
+            android:label="Event"/>
+        <activity android:name=".AttendanceScreen"
+            android:label="Attendance"/>
+        <activity android:name=".LessonScreen"
+            android:label="Lessons"/>
+        <activity android:name=".FeedbackScreen"
+            android:label="Feedback"></activity>
     </application>
 
 </manifest>
