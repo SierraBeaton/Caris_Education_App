@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Caris_Education_App</string>
+    <string name="meeting_name">Meeting Name:</string>
 </resources>
