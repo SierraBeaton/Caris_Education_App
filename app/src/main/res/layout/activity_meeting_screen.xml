@@ -69,7 +69,7 @@
             android:layout_marginTop="100dp"
             android:inputType="none"
             android:textColor="@color/Black"
-            android:text="@string/meeting_name"
+            android:text="Meeting Name:"
             android:textSize="20sp" />
 
         <EditText
