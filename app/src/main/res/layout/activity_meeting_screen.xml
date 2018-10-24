@@ -67,8 +67,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="100dp"
-            android:layout_marginVertical="110dp"
             android:inputType="none"
+            android:textColor="@color/Black"
             android:text="@string/meeting_name"
             android:textSize="20sp" />
 
@@ -79,9 +79,10 @@
             android:textSize="20sp"
             android:inputType="textNoSuggestions"
             android:ems="10"
+            android:background="@color/Transparent"
             android:singleLine="true"
             android:layout_marginTop="100dp"
-            android:layout_marginStart="157dp"
+            android:layout_marginStart="162dp"
             android:layout_marginEnd="20dp"
             android:visibility="visible"/>
     </RelativeLayout>
