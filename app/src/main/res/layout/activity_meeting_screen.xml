@@ -52,4 +52,35 @@
             app:layout_constraintStart_toEndOf="@+id/b_lessons"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/buttonLayout">
+        <TextView
+            android:id="@+id/meetingName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="100dp"
+            android:inputType="none"
+            android:textColor="@color/Black"
+            android:text="Meeting Name:"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/nameMeeting"
+            android:labelFor="@id/meetingName"
+            android:hint="Enter meeting name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="textNoSuggestions"
+            android:ems="10"
+            android:background="@color/Transparent"
+            android:singleLine="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="162dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="visible"/>
+    </RelativeLayout>
 </RelativeLayout>
