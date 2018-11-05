@@ -25,7 +25,10 @@
         <activity android:name=".LessonScreen"
             android:label="Lessons"/>
         <activity android:name=".FeedbackScreen"
-            android:label="Feedback"></activity>
+            android:label="Feedback"/>
+        <activity android:name=".Lesson"
+            android:label="Lesson">
+        </activity>
     </application>
 
 </manifest>

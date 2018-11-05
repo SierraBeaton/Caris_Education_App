@@ -28,4 +28,7 @@ public class LessonScreen extends AppCompatActivity {
     public void b_feedback(View view) {
         startActivity(new Intent(this, FeedbackScreen.class));
     }
+
+    //Buttons to FirstLessonPage page
+    public void b_lesson1(View view) { startActivity(new Intent (this, Lesson.class));}
 }
