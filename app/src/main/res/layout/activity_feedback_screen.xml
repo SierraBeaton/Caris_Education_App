@@ -7,10 +7,10 @@
     tools:context=".FeedbackScreen">
 
     <LinearLayout
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
-        android:id="@+id/topLayout"
         android:orientation="horizontal"
         android:weightSum="3">
 
@@ -54,34 +54,45 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/b_lessons"
             app:layout_constraintTop_toTopOf="parent" />
+
     </LinearLayout>
 
+    <ListView
+        android:id="@+id/arrayView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomLayout"
+        android:layout_below="@id/topLayout"
+        android:layout_weight="1">
+
+    </ListView>
 
     <LinearLayout
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/bottomLayout"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:weightSum="5"
-        android:layout_alignParentBottom="true">
+        android:weightSum="5">
 
         <EditText
-            android:id="@+id/tbox_info"
+            android:id="@+id/feedback_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:ems="10"
+            android:hint="Hit save to push..."
             android:inputType="textMultiLine"
             android:selectAllOnFocus="false"
             android:singleLine="false"
-            android:text="Hit save to push..."
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/b_send"
+            android:id="@+id/b_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Save" />
     </LinearLayout>
+
 </RelativeLayout>
