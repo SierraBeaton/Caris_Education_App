@@ -29,7 +29,15 @@
         <activity android:name=".FeedbackScreen"
             android:label="Feedback"/>
         <activity android:name=".Lesson"
-            android:label="Lesson">
+            android:label="Lesson #1"/>
+        <activity android:name=".Lesson2"
+            android:label="Lesson #2"/>
+        <activity android:name=".Lesson3"
+            android:label="Lesson #3"/>
+        <activity android:name=".Lesson4"
+            android:label="Lesson #4"/>
+        <activity android:name=".Lesson5"
+            android:label="Lesson #5">
         </activity>
     </application>
 

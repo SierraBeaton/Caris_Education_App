@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lesson2">
+
+    <LinearLayout
+        android:id="@+id/topPart"
+        android:layout_width="match_parent"
+        android:layout_height="157dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <EditText
+            android:id="@+id/topText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:hint="Cool Latin Stuff"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:text="Lorem ipsum dolor sit amet, vix alii aperiri dignissim id, in nec nulla putent oportere. Per labore tibique ad. Singulis electram sea ad, cu sit oratio ancillae, nam ei putant doctus aliquando." />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="3"
+            android:contentDescription="Android Studio"
+            app:srcCompat="@mipmap/ic_launcher" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/moreText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topPart"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="4"
+        android:hint="More Cool Latin Stuff"
+        android:inputType="textMultiLine"
+        android:text="Cu doming option sed, vim ne delenit scripserit. Sea rebum vocent debitis ad. No quem odio iracundia ius, qui cu labitur aliquid iudicabit. Purto omnis usu ex.  Utamur habemus liberavisse cu sed, sumo qualisque cotidieque id mel. Quo habeo soleat id, ea evertitur consetetur vituperata per, eos legere consectetuer ex. Ut cum amet laboramus dissentiunt, et mutat nemore phaedrum eum, te per primis sapientem necessitatibus. Eu quo error urbanitas prodesset. Alia error sanctus vix in, qui inani quidam reprehendunt cu, eam nominavi perpetua ullamcorper ad.  Vis dicunt oportere ad, ad his equidem nusquam. Et mei sanctus maiorum praesent. Quo no facer quando offendit. Ex vix pertinacia definiebas, omnesque oportere qualisque vis at, per et iracundia posidonium. Mea veritus elaboraret ei.  Est impedit convenire eu, at sed dolores omnesque. Sonet oporteat eam an, nec ne autem molestie, ex adhuc percipit vix. Qui inani recusabo sensibus ad, ipsum molestiae at his. At vim omnis omittam, duo expetendis dissentias ad.  Wisi option sed cu, mucius efficiantur te mei. Vix salutandi inciderint concludaturque et, causae tacimates eloquentiam ex per. Unum ornatus omittam ea eum. No nullam veritus voluptatum his. Id rebum fabellas referrentur vis, id omnesque accusamus elaboraret eos. Molestie insolens no vim, error postea accusamus ea pri, te sit dolorum adolescens neglegentur.  Ei tota modus nominati mea, at adolescens voluptaria ius, augue soluta eum ex. Reque indoctum qui at, expetenda conceptam ut qui. Doming iuvaret usu id, te quo habemus mnesarchum voluptatibus, scriptorem philosophia ut usu. Eum adhuc tation quaeque ne, eu quot causae sed. Ei ius quod veritus, nostrud impedit nominavi mei ad. " />
+</RelativeLayout>

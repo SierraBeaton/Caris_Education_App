@@ -23,7 +23,7 @@ public class Lesson extends AppCompatActivity {
     }
 
     public void videoplay(View v) {
-        String videopath = "android.resource://com.example.sierrabeaton.caris_education_app"+R.raw.how_to;
+        String videopath = "android.resource://" + getPackageName() + "/" +  R.raw.how_to;
         Uri uri = Uri.parse(videopath);
         videov.setVideoURI(uri);
         videov.setMediaController(mediaC);

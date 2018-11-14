@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class LessonScreen extends AppCompatActivity {
 
     @Override
@@ -13,6 +18,7 @@ public class LessonScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_screen);
     }
+
 
     //Button to Attendance page
     public void b_attendance(View view) {
@@ -30,5 +36,27 @@ public class LessonScreen extends AppCompatActivity {
     }
 
     //Buttons to FirstLessonPage page
-    public void b_lesson1(View view) { startActivity(new Intent (this, Lesson.class));}
+    public void b_lesson1(View view) {
+        startActivity(new Intent(this, Lesson.class));
+    }
+
+    //Buttons to FirstLessonPage page
+    public void b_lesson2(View view) {
+        startActivity(new Intent(this, Lesson2.class));
+    }
+
+    //Buttons to FirstLessonPage page
+    public void b_lesson3(View view) {
+        startActivity(new Intent(this, Lesson3.class));
+    }
+
+    //Buttons to FirstLessonPage page
+    public void b_lesson4(View view) {
+        startActivity(new Intent(this, Lesson4.class));
+    }
+
+    //Buttons to FirstLessonPage page
+    public void b_lesson5(View view) {
+        startActivity(new Intent(this, Lesson5.class));
+    }
 }
