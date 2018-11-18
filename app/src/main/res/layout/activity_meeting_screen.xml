@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:id="@+id/buttonLayout">
 
         <Button
             android:id="@+id/b_attendance"
@@ -58,7 +59,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/buttonLayout">
         <TextView
-            android:id="@+id/meetingName"
+            android:id="@+id/MeetingName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -67,14 +68,13 @@
             android:textColor="@color/Black"
             android:text="Meeting Name:"
             android:textSize="20sp" />
-        <EditText
-            android:id="@+id/nameMeeting"
-            android:labelFor="@id/meetingName"
-            android:hint="Enter meeting name"
+        <TextView
+            android:id="@+id/meetingNameText"
+            android:labelFor="@id/MeetingName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:inputType="textNoSuggestions"
+            android:text="Some text"
             android:ems="10"
             android:background="@color/Transparent"
             android:singleLine="true"
