@@ -14,9 +14,6 @@
         android:layout_alignParentTop="true"
         android:weightSum="10">
 
-        <SearchView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </LinearLayout>
 
     <LinearLayout
