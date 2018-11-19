@@ -24,154 +24,48 @@ import java.util.List;
 public class MeetingScreen extends AppCompatActivity {
     public static final String displayMeetingText = "notta";
 
-    //Class of Meeting to fill with data to use in the database
-    public class Meeting {
-        //fields
-        private int meetingID;
-        private String meetingName;
-        //constructors
-        public Meeting() {}
-        public Meeting(int id, String mName)
-        {
-            this.meetingID = id;
-            this.meetingName = mName;
-        }
-        //properties of setters and getters
-        public void setMeetingID (int id)
-        {
-            this.meetingID = id;
-        }
-        public int getMeetingID ()
-        {
-            return this.meetingID;
-        }
-        public void setMeetingName (String mName)
-        {
-            this.meetingName = mName;
-        }
-        public String getMeetingName()
-        {
-            return this.meetingName;
-        }
-    }
-
-    public class MyDBHandler extends SQLiteOpenHelper {
-        //information of database
-        private static final int DATABASE_VERSION = 1;
-        //Database Name
-        private static final String DATABASE_NAME = "meetingDB";
-        //Table name
-        private static final String TABLE_NAME = "MeetingTable";
-
-        //Table columns
-        private static final String KEY_ID = "MeetingID";
-        private static final String KEY_NAME = "MeetingName";
-
-        //initialize the database
-        public MyDBHandler(Context context) {
-            super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        }
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-            String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
-                    + KEY_ID + "INTEGER PRIMARYKEY,"
-                    + KEY_NAME + "TEXT"
-                    + ")";
-            db.execSQL(CREATE_TABLE);
-        }
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-
-            onCreate(db);
-        }
-
-        //Adds data to the database
-        public long addHandler(Meeting meeting) {
-            SQLiteDatabase db = this.getWritableDatabase();
-
-            ContentValues values = new ContentValues();
-            values.put(KEY_ID, meeting.getMeetingID());
-            values.put(KEY_NAME, meeting.getMeetingName());
-
-            //Insert
-            long id = db.insert(TABLE_NAME, null, values);
-            db.close();
-            return id;
-        }
-        //Loads the data by executing a query
-        public Meeting loadHandler(int id) {
-            SQLiteDatabase db = this.getWritableDatabase();
-            Cursor cursor = db.query(true,TABLE_NAME, new String[] {
-                    KEY_ID, KEY_NAME},
-                    KEY_ID + "=?",
-                    new String[] {String.valueOf(id)},
-                    null,
-                    null,null,null, null);
-
-            if(cursor != null)
-                cursor.moveToFirst();
-
-            Meeting meetingData = new Meeting(
-                    Integer.parseInt(cursor.getString(0)),
-                    cursor.getString(1));
-
-            return meetingData;
-        }
-        //Updates an entry
-        public int updateHandler(Meeting meeting) {
-            SQLiteDatabase db = this.getWritableDatabase();
-
-            ContentValues values = new ContentValues();
-            values.put(KEY_ID, meeting.getMeetingID());
-            values.put(KEY_NAME, meeting.getMeetingName());
-
-            return db.update(TABLE_NAME, values, KEY_ID + "= ?", new String[] { String.valueOf(meeting.getMeetingID()) });
-        }
-        //Deletes a row
-        public boolean deleteHandler(int ID) {
-            boolean result = false;
-            String query = "Select*FROM" + TABLE_NAME + "WHERE" + KEY_ID + "= '" + String.valueOf(ID) + "'";
-            SQLiteDatabase db = this.getWritableDatabase();
-            Cursor cursor = db.rawQuery(query, null);
-            Meeting meeting = new Meeting();
-            if (cursor.moveToFirst()) {
-                meeting.setMeetingID(Integer.parseInt(cursor.getString(0)));
-                db.delete(TABLE_NAME, KEY_ID + "=?",
-                        new String[] {
-                                String.valueOf(meeting.getMeetingID())
-                        });
-                cursor.close();
-                result = true;
-            }
-            db.close();
-            return result;
-        }
-
-    }
-
+    //Some variables to help with adding and displaying data
+    Meeting meeting1Info = new Meeting(1,"Meeting 1","Abilene","3:00PM");
+    DBHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meeting_screen);
 
+        db = new DBHandler(this);
+
+        db.addNewMeeting(meeting1Info);
+
         String theMeetingClicked = getIntent().getStringExtra(displayMeetingText);
 
-        myDB.addHandler(meeting1Info);
+        TextView MeetingNameText = findViewById(R.id.meetingNameText);
+        TextView MeetingPlaceText = findViewById(R.id.meetingNamePlace);
 
-        Meeting meetingName = myDB.loadHandler(meeting1Info.getMeetingID());
+        //Loop through the query that will be created and return the data of the class Meeting if it exists
+        Meeting tempMeet = getMeetingStuff(theMeetingClicked);
 
-        //System.out.print(meetingName);
+        if (tempMeet != null) {
+            MeetingNameText.setText(tempMeet.getMeetingName());
+            MeetingPlaceText.setText(tempMeet.getMeetingPlace());
+        }
 
-        TextView MeetingNametoDisplay = findViewById(R.id.meetingNameText);
-        MeetingNametoDisplay.setText(meetingName.getMeetingName());
+        db.deleteMEETING(meeting1Info.getMeetingID());
     }
 
-    //Some variables to help with adding and displaying data
-    Meeting meeting1Info = new Meeting(1,"Meeting1");
-    MyDBHandler myDB = new MyDBHandler(this);
 
+    Meeting getMeetingStuff(String theMeetingClicked)
+    {
+        List<Meeting> meetingList = db.getAllMeetingList();
+        for (Meeting mtd : meetingList)
+        {
+            String test = mtd.getMeetingName();
+            if(test.equals(theMeetingClicked)) {
+                return mtd;
+            }
+        }
+        return null;
+    }
 
     //Button to Attendance page
     public void b_attendance(View view) {
