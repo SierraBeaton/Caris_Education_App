@@ -26,6 +26,7 @@ public class MeetingScreen extends AppCompatActivity {
 
     //Some variables to help with adding and displaying data
     Meeting meeting1Info = new Meeting(1,"Meeting 1","Abilene","3:00PM");
+    Meeting meeting2Info = new Meeting(2,"Meeting 2","Dallas","4:00PM");
     DBHandler db;
 
     @Override
@@ -36,6 +37,7 @@ public class MeetingScreen extends AppCompatActivity {
         db = new DBHandler(this);
 
         db.addNewMeeting(meeting1Info);
+        db.addNewMeeting(meeting2Info);
 
         String theMeetingClicked = getIntent().getStringExtra(displayMeetingText);
 
@@ -50,7 +52,6 @@ public class MeetingScreen extends AppCompatActivity {
             MeetingPlaceText.setText(tempMeet.getMeetingPlace());
         }
 
-        db.deleteMEETING(meeting1Info.getMeetingID());
     }
 
 
