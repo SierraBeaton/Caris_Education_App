@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sierrabeaton.caris_education_app">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,18 +25,7 @@
         <activity android:name=".LessonScreen"
             android:label="Lessons"/>
         <activity android:name=".FeedbackScreen"
-            android:label="Feedback"/>
-        <activity android:name=".Lesson"
-            android:label="Lesson #1"/>
-        <activity android:name=".Lesson2"
-            android:label="Lesson #2"/>
-        <activity android:name=".Lesson3"
-            android:label="Lesson #3"/>
-        <activity android:name=".Lesson4"
-            android:label="Lesson #4"/>
-        <activity android:name=".Lesson5"
-            android:label="Lesson #5">
-        </activity>
+            android:label="Feedback"></activity>
     </application>
 
 </manifest>
