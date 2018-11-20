@@ -7,14 +7,16 @@ public class Meeting {
     private String meetingName;
     private String meetingPlace;
     private String meetingTime;
+    private String meetingDescription;
     //constructors
     public Meeting() {}
-    public Meeting(int id, String meetName, String meetPlace, String meetTime)
+    public Meeting(int id, String meetName, String meetPlace, String meetTime, String meetDescription)
     {
         this.meetingID = id;
         this.meetingName = meetName;
         this.meetingPlace = meetPlace;
         this.meetingTime = meetTime;
+        this.meetingDescription = meetDescription;
     }
     //properties of setters and getters
     public void setMeetingID (int meetid)
@@ -36,5 +38,8 @@ public class Meeting {
     public String getMeetingPlace () { return this.meetingPlace; }
 
     public void setMeetingTime (String meetTime) { this.meetingTime = meetTime; }
-    public String getMeetingTime () { return this.meetingTime;}
+    public String getMeetingTime () { return this.meetingTime; }
+
+    public void setMeetingDescription (String meetDesccription) { this.meetingDescription = meetDesccription; }
+    public String getMeetingDescription () { return this.meetingDescription; }
 }

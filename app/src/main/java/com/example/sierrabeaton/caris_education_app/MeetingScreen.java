@@ -25,16 +25,16 @@ public class MeetingScreen extends AppCompatActivity {
     public static final String displayMeetingText = "notta";
 
     //Some variables to help with adding and displaying data
-    Meeting meeting1Info = new Meeting(1,"Meeting 1","Abilene","3:00PM");
-    Meeting meeting2Info = new Meeting(2,"Meeting 2","Dallas","4:00PM");
-    DBHandler db;
+    Meeting meeting1Info = new Meeting(1,"Meeting 1","Abilene","3:00PM", "Some Description1");
+    Meeting meeting2Info = new Meeting(2,"Meeting 2","Dallas","4:00PM", "Some Description2");
+    MeetingDBHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meeting_screen);
 
-        db = new DBHandler(this);
+        db = new MeetingDBHandler(this);
 
         db.addNewMeeting(meeting1Info);
         db.addNewMeeting(meeting2Info);

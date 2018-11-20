@@ -72,18 +72,42 @@
             android:text="Meeting Name:"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/nameMeeting"
-            android:labelFor="@id/meetingName"
-            android:hint="Enter meeting name"
+        <TextView
+            android:id="@+id/meetingNameText"
+            android:hint="Show Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:inputType="textNoSuggestions"
             android:ems="10"
             android:background="@color/Transparent"
             android:singleLine="true"
             android:layout_marginTop="100dp"
+            android:layout_marginStart="162dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="visible"/>
+        <TextView
+            android:id="@+id/meetingPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meetingName"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
+            android:inputType="none"
+            android:textColor="@color/Black"
+            android:text="Meeting Place:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/meetingNamePlace"
+            android:hint="Show Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meetingNameText"
+            android:textSize="20sp"
+            android:ems="10"
+            android:background="@color/Transparent"
+            android:singleLine="true"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="162dp"
             android:layout_marginEnd="20dp"
             android:visibility="visible"/>
