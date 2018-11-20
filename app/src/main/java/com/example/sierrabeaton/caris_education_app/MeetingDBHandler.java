@@ -11,7 +11,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBHandler extends SQLiteOpenHelper {
+public class MeetingDBHandler extends SQLiteOpenHelper {
     // All Static variables
     // Database Version
     private static final int DATABASE_VERSION = 1;
@@ -27,8 +27,9 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_MEETING_NAME = "meetingName";
     private static final String KEY_PLACE = "place";
     private static final String KEY_TIME = "time";
+    private static final String KEY_DESCRIPTION = "description";
 
-    public DBHandler(Context context) {
+    public MeetingDBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -37,10 +38,12 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String CREATE_STUDENT_DETAIL_TABLE = "CREATE TABLE " + TABLE_MEETING_DETAIL + "("
-                + KEY_ID + " INTEGER PRIMARY KEY,"
+                + KEY_ID + " INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,"
                 + KEY_MEETING_NAME + " TEXT,"
                 + KEY_PLACE + " TEXT,"
-                + KEY_TIME + " TEXT " + ")";
+                + KEY_TIME + " TEXT,"
+                + KEY_DESCRIPTION + " TEXT "
+                + ")";
 
         db.execSQL(CREATE_STUDENT_DETAIL_TABLE);
 
@@ -70,6 +73,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_MEETING_NAME, newmeet.getMeetingName());
         values.put(KEY_PLACE, newmeet.getMeetingPlace());
         values.put(KEY_TIME, newmeet.getMeetingTime());
+        values.put(KEY_DESCRIPTION, newmeet.getMeetingDescription());
 
 
         // Inserting Row
@@ -78,7 +82,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
-    public boolean updateMeetingInfo(int updId, int updName, String updPlace, String updTime) {
+    public boolean updateMeetingInfo(int updId, int updName, String updPlace, String updTime, String updDescription) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -87,6 +91,7 @@ public class DBHandler extends SQLiteOpenHelper {
         args.put(KEY_MEETING_NAME, updName);
         args.put(KEY_PLACE, updPlace);
         args.put(KEY_TIME, updTime);
+        args.put(KEY_DESCRIPTION, updDescription);
 
         return db.update(TABLE_MEETING_DETAIL, args, KEY_ID + "=" + updId, null) > 0;
     }
@@ -123,6 +128,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 meet.setMeetingName(cursor.getString(1));
                 meet.setMeetingPlace(cursor.getString(2));
                 meet.setMeetingTime(cursor.getString(3));
+                meet.setMeetingDescription(cursor.getString(4));
 
                 // Adding contact to list
                 meetingList.add(meet);

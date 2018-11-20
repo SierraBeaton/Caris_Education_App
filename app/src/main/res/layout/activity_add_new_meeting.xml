@@ -4,73 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MeetingScreen">
+    tools:context=".AddNewMeeting">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:weightSum="3"
-        android:id="@+id/buttonLayout">
-
-        <Button
-            android:id="@+id/b_attendance"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:layout_marginStart="0dp"
-            android:layout_weight="1"
-            android:onClick="b_attendance"
-            android:text="Attendance"
-            android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/b_lessons"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/b_lessons"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:layout_marginStart="0dp"
-            android:layout_weight="1"
-            android:onClick="b_lessons"
-            android:text="Lessons"
-            android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/b_feedback"
-            app:layout_constraintStart_toEndOf="@+id/b_attendance" />
-
-        <Button
-            android:id="@+id/b_feedback"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:layout_marginStart="0dp"
-            android:layout_weight="1"
-            android:onClick="b_feedback"
-            android:text="Feedback"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/b_lessons"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/buttonLayout">
+        android:id="@+id/MeetingStuff">
 
-        <TextView
+        <EditText
             android:id="@+id/meetingNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35sp"
+            android:layout_marginStart="20dp"
+            android:textSize="30sp"
             android:ems="10"
             android:background="@color/Transparent"
             android:textAlignment="center"
-            android:text="Show Text"
-            android:textColor="@color/Black"
+            android:hint="Input meeting Name"
             android:singleLine="true"
             android:layout_marginTop="40dp"
             android:visibility="visible"/>
@@ -85,9 +35,9 @@
             android:text="Meeting Place:"
             android:textSize="20sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/meetingNamePlace"
-            android:hint="Show Text"
+            android:hint="Input Place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -110,9 +60,9 @@
             android:text="Meeting Time:"
             android:textSize="20sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/meetingNameTime"
-            android:hint="Show Text"
+            android:hint="Input Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/meetingNamePlace"
@@ -136,17 +86,18 @@
             android:text="Meeting Description:"
             android:textSize="20sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/meetingNameDescription"
-            android:layout_width="342dp"
-            android:layout_height="253dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:gravity="top"
             android:layout_below="@+id/meetingDescription"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="2dp"
             android:background="@color/Transparent"
             android:ems="10"
-            android:hint="Show Text"
+            android:hint="Enter Description"
             android:inputType="textMultiLine"
             android:scrollHorizontally="false"
             android:ellipsize="none"
@@ -154,4 +105,15 @@
             android:textSize="15sp"
             android:visibility="visible" />
     </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/confirm"
+        android:layout_alignBottom="@id/MeetingStuff"
+        android:layout_alignEnd="@id/MeetingStuff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="bottom"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_check_circle_black_24dp" />
+
 </RelativeLayout>

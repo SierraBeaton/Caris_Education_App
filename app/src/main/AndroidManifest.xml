@@ -9,33 +9,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeScreen"
+        <activity
+            android:name=".HomeScreen"
             android:label="Meetings">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MeetingScreen"
-            android:label="Event"/>
-        <activity android:name=".AttendanceScreen"
-            android:label="Attendance"/>
-        <activity android:name=".LessonScreen"
-            android:label="Lessons"/>
-        <activity android:name=".Lesson"
-            android:label="Lesson #1"/>
-        <activity android:name=".Lesson2"
-            android:label="Lesson #2"/>
-        <activity android:name=".Lesson3"
-            android:label="Lesson #3"/>
-        <activity android:name=".Lesson4"
-            android:label="Lesson #4"/>
-        <activity android:name=".Lesson5"
-            android:label="Lesson #5"/>
-        <activity android:name=".FeedbackScreen"
-            android:label="Feedback"></activity>
+        <activity
+            android:name=".MeetingScreen"
+            android:label="Event" />
+        <activity
+            android:name=".AttendanceScreen"
+            android:label="Attendance" />
+        <activity
+            android:name=".LessonScreen"
+            android:label="Lessons" />
+        <activity
+            android:name=".Lesson"
+            android:label="Lesson #1" />
+        <activity
+            android:name=".Lesson2"
+            android:label="Lesson #2" />
+        <activity
+            android:name=".Lesson3"
+            android:label="Lesson #3" />
+        <activity
+            android:name=".Lesson4"
+            android:label="Lesson #4" />
+        <activity
+            android:name=".Lesson5"
+            android:label="Lesson #5" />
+        <activity
+            android:name=".FeedbackScreen"
+            android:label="Feedback" />
+        <activity android:name=".AddNewMeeting"></activity>
     </application>
 
 </manifest>
