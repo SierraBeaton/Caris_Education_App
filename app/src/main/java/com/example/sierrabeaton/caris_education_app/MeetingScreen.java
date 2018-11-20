@@ -26,7 +26,7 @@ public class MeetingScreen extends AppCompatActivity {
 
     //Some variables to help with adding and displaying data
     Meeting meeting1Info = new Meeting(1,"Meeting 1","Abilene","3:00PM", "Some Description1");
-    Meeting meeting2Info = new Meeting(2,"Meeting 2","Dallas","4:00PM", "Some Description2");
+    Meeting meeting2Info = new Meeting(2,"Meeting 2","Dallas","4:00PM", "Some Description2 and more bleh and nonsense for testing purposes uh....");
     MeetingDBHandler db;
 
     @Override
@@ -43,6 +43,8 @@ public class MeetingScreen extends AppCompatActivity {
 
         TextView MeetingNameText = findViewById(R.id.meetingNameText);
         TextView MeetingPlaceText = findViewById(R.id.meetingNamePlace);
+        TextView MeetingTimeText = findViewById(R.id.meetingNameTime);
+        TextView MeetingDescription = findViewById(R.id.meetingNameDescription);
 
         //Loop through the query that will be created and return the data of the class Meeting if it exists
         Meeting tempMeet = getMeetingStuff(theMeetingClicked);
@@ -50,6 +52,8 @@ public class MeetingScreen extends AppCompatActivity {
         if (tempMeet != null) {
             MeetingNameText.setText(tempMeet.getMeetingName());
             MeetingPlaceText.setText(tempMeet.getMeetingPlace());
+            MeetingTimeText.setText(tempMeet.getMeetingTime());
+            MeetingDescription.setText(tempMeet.getMeetingDescription());
         }
 
     }
