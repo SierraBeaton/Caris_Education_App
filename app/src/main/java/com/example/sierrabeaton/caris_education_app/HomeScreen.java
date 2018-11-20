@@ -1,15 +1,21 @@
 package com.example.sierrabeaton.caris_education_app;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class HomeScreen extends AppCompatActivity {
 
     private String meeting1;
     private String meeting2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +27,8 @@ public class HomeScreen extends AppCompatActivity {
 
         meeting1 = (String) meetOne.getText();
         meeting2 = (String) meetTwo.getText();
+        
+
 
         meetOne.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +44,14 @@ public class HomeScreen extends AppCompatActivity {
                 Intent intent = new Intent(HomeScreen.this, MeetingScreen.class);
                 intent.putExtra(MeetingScreen.displayMeetingText, meeting2);
                 startActivity(intent);
+            }
+        });
+
+        FloatingActionButton fab = findViewById(R.id.addNewMeet);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeScreen.this, AddNewMeeting.class));
             }
         });
     }

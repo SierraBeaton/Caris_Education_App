@@ -38,7 +38,7 @@ public class MeetingDBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String CREATE_STUDENT_DETAIL_TABLE = "CREATE TABLE " + TABLE_MEETING_DETAIL + "("
-                + KEY_ID + " INTEGER UNIQUE PRIMARY KEY,"
+                + KEY_ID + " INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT,"
                 + KEY_MEETING_NAME + " TEXT,"
                 + KEY_PLACE + " TEXT,"
                 + KEY_TIME + " TEXT,"
